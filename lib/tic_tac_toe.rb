@@ -25,13 +25,9 @@ def move(board, index, current_player)
   board[index] = current_player
 end
 
-def position_taken?(index)
+def position_taken?(board, index)
   !(board[index].nil? || board[index] == " ")
 end
-
-def position_taken?(index_i)
-    ((@board[index_i] == "X") || (@board[index_i] == "O"))
-  end
 
 def valid_move?(board, index)
   index.between?(0,8) && !position_taken?(board, index)
